@@ -18,6 +18,9 @@ export default defineConfig({
       '@components': resolve(__dirname, './src/components'),
       '@utils': resolve(__dirname, './src/utils'),
       '@routes': resolve(__dirname, './src/routes'),
+      '@api': resolve(__dirname, './src/api'),
+      '@constants': resolve(__dirname, './src/constants'),
+      '@custom-types': resolve(__dirname, './src/types'),
     },
   },
 })
