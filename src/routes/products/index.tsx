@@ -1,5 +1,5 @@
 import { getAllProducts } from "@api";
-import { ProductCard } from "@components/ui";
+import { ProductCard, ProductListSkeleton } from "@components/ui";
 import { PRODUCTS_QUERY_KEY } from "@constants/queryKeys";
 import { URLS } from "@constants/urls";
 import { ErrorBoundary, Suspense } from "@suspensive/react";
@@ -12,7 +12,7 @@ export const Route = createFileRoute(URLS.PRODUCTS)({
 
 function ProductsListRoute() {
 	return (
-		<Suspense fallback={<div>Loading...</div>}>
+		<Suspense fallback={<ProductListSkeleton />}>
 			<ErrorBoundary fallback={<div>Error</div>}>
 				<ProductsListPage />
 			</ErrorBoundary>
@@ -27,10 +27,12 @@ function ProductsListPage() {
 	});
 
 	return (
-		<div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-			{data?.map((product) => (
-				<ProductCard key={product.id} {...product} />
-			))}
+		<div className="flex h-full flex-col items-center">
+			<div className="grid grid-cols-2 gap-4 px-4 sm:grid-cols-3">
+				{data?.map((product) => (
+					<ProductCard key={product.id} {...product} />
+				))}
+			</div>
 		</div>
 	);
 }
