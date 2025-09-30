@@ -9,17 +9,17 @@ const ProductListSkeleton = ({ count = 9 }: ProductListSkeletonProps) => {
 
 	return (
 		<div className="flex h-full flex-col items-center">
-			<div className="grid grid-cols-2 gap-4 px-4 sm:grid-cols-3">
+			<ul className="grid grid-cols-2 gap-4 px-4 sm:grid-cols-3">
 				{skeletonKeys.map((key) => (
-					<div key={key} className="h-[320px] w-[190px] rounded-lg border border-gray-200">
+					<li key={key} className="h-[320px] w-[190px] rounded-lg border border-gray-200">
 						<Skeleton className="h-[190px] w-full rounded-t-lg" />
 						<div className="space-y-2 px-4 py-4">
 							<Skeleton className="h-[50px] w-full" />
 							<Skeleton className="h-[24px] w-20" />
 						</div>
-					</div>
+					</li>
 				))}
-			</div>
+			</ul>
 		</div>
 	);
 };

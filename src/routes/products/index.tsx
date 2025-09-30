@@ -28,11 +28,14 @@ function ProductsListPage() {
 
 	return (
 		<div className="flex h-full flex-col items-center">
-			<div className="grid grid-cols-2 gap-4 px-4 sm:grid-cols-3">
+			<h1 className="sr-only">전체 상품</h1>
+			<ul className="grid grid-cols-2 gap-4 px-4 sm:grid-cols-3">
 				{data?.map((product) => (
-					<ProductCard key={product.id} {...product} />
+					<li key={product.id}>
+						<ProductCard {...product} />
+					</li>
 				))}
-			</div>
+			</ul>
 		</div>
 	);
 }

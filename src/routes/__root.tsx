@@ -19,7 +19,7 @@ const RouterDevtoolsPanelLazy = import.meta.env.DEV
 
 export const Route = createRootRoute({
 	component: () => (
-		<>
+		<main>
 			<Outlet />
 			{import.meta.env.DEV && DevtoolsLazy && RouterDevtoolsPanelLazy ? (
 				<Suspense>
@@ -34,6 +34,6 @@ export const Route = createRootRoute({
 					/>
 				</Suspense>
 			) : null}
-		</>
+		</main>
 	),
 });
