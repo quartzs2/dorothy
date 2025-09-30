@@ -26,6 +26,10 @@
       "@components/*": ["./src/components/*"],
       "@utils/*": ["./src/utils/*"],
       "@routes/*": ["./src/routes/*"],
+      "@api": ["./src/api"],
+      "@api/*": ["./src/api/*"],
+      "@constants/*": ["./src/constants/*"],
+      "@custom-types/*": ["./src/types/*"],
     }
   }
 }
