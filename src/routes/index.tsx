@@ -1,7 +1,7 @@
-import { URLS } from "@constants/urls";
+import { ROUTES } from "@constants/urls";
 import { createFileRoute } from "@tanstack/react-router";
 
-export const Route = createFileRoute(URLS.ROOT)({
+export const Route = createFileRoute(ROUTES.ROOT)({
 	component: Index,
 });
 

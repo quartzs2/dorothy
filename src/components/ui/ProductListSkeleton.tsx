@@ -5,7 +5,7 @@ type ProductListSkeletonProps = {
 };
 
 const ProductListSkeleton = ({ count = 9 }: ProductListSkeletonProps) => {
-	const skeletonKeys = Array.from({ length: count }, (_, i) => `skeleton-${i}-${Date.now()}`);
+	const skeletonKeys = Array.from({ length: count }, (_, i) => `skeleton-${i}`);
 
 	return (
 		<div className="flex h-full flex-col items-center">
